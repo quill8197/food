@@ -77,8 +77,8 @@
     // Define a route that takes 2 parameters
     $f3->route('GET /@first/@last', function($f3, $params)
     {
-        $first = $params['first'];
-        $last = $params['last'];
+        $first = ucfirst($params['first']);
+        $last = ucfirst($params['last']);
         echo "<h1>Hello, $first $last!</h1>";
     });
 
