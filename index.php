@@ -48,6 +48,12 @@
     $f3->route('GET /@item', function($f3, $params)
     {
         $item = $params['item'];
+        $foodsWeServe = array('spaghetti', 'enchiladas', 'pad tai', 'lumpia');
+
+        if (!in_array($item, $foodsWeServe))
+        {
+            echo "We don't serve $item.";
+        }
 
         switch ($item)
         {
@@ -66,6 +72,14 @@
             default:
                 $f3->error(404);
         }
+    });
+
+    // Define a route that takes 2 parameters
+    $f3->route('GET /@first/@last', function($f3, $params)
+    {
+        $first = $params['first'];
+        $last = $params['last'];
+        echo "<h1>Hello, $first $last!</h1>";
     });
 
     // Define a lunch route
