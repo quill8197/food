@@ -23,6 +23,7 @@
     // Define a default route
     $f3->route('GET /', function()
     {
+        // Display home view
         $view = new Template();
         echo $view->render('views/home.html');
     });
@@ -30,7 +31,9 @@
     // Define a breakfast route
     $f3->route('GET /breakfast', function()
     {
-        echo '<h1>Breakfast Page</h1>';
+        // Display breakfast view
+        $view = new Template();
+        echo $view->render('views/breakfast.html');
     });
 
     // Run Fat-Free
