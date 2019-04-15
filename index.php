@@ -39,7 +39,7 @@
     // Define a continental breakfast route
     $f3->route('GET /breakfast/continental', function()
     {
-        // Display breakfast view
+        // Display continental breakfast view
         $view = new Template();
         echo $view->render('views/bfast-cont.html');
     });
@@ -50,6 +50,14 @@
         // Display lunch view
         $view = new Template();
         echo $view->render('views/lunch.html');
+    });
+
+    // Define a brunch buffet route
+    $f3->route('GET /lunch/brunch/buffet', function()
+    {
+        // Display brunch buffet view
+        $view = new Template();
+        echo $view->render('views/buffet.html');
     });
 
     // Run Fat-Free
