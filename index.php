@@ -82,6 +82,14 @@
         echo "<h1>Hello, $first $last!</h1>";
     });
 
+    // Define a route that takes 2 parameters
+    $f3->route('GET /order', function($f3, $params)
+    {
+        // Display order view
+        $view = new Template();
+        echo $view->render('views/form1.html');
+    });
+
     // Define a lunch route
     $f3->route('GET /lunch', function()
     {
