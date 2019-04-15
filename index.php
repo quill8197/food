@@ -11,20 +11,26 @@
     ini_set('display_error', 1);
     error_reporting(E_ALL);
 
-    //require autoload file
+    // Require autoload file
     require_once ('vendor/autoload.php');
 
-    // create an instance of the base class
+    // Create an instance of the base class
     $f3 = Base::instance();
 
     // Turn on Fat-free error reporting
     $f3->set('DEBUG', 3);
 
-    // define a default route
+    // Define a default route
     $f3->route('GET /', function()
     {
         $view = new Template();
         echo $view->render('views/home.html');
+    });
+
+    // Define a breakfast route
+    $f3->route('GET /breakfast', function()
+    {
+        echo '<h1>Breakfast Page</h1>';
     });
 
     // Run Fat-Free
