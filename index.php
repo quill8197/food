@@ -7,6 +7,9 @@
 * Description: practice routing
 */
 
+// Start a session
+session_start();
+
 // Turn on error reporting
 ini_set('display_error', 1);
 error_reporting(E_ALL);
@@ -96,11 +99,20 @@ $f3->route('GET /order', function()
 // Define an order process route
 $f3->route('POST /order-process', function()
 {
-    print_r($_POST);
+    //print_r($_POST);
+    $_SESSION['food'] = $_POST['food'];
 
     // Display order-process view
     $view = new Template();
     echo $view->render('views/form2.html');
+});
+
+// Define a summary route
+$f3->route('POST /summary', function()
+{
+    // Display summary view
+    $view = new Template();
+    echo $view->render('views/summary.html');
 });
 
 // Define a lunch route
