@@ -99,7 +99,6 @@ $f3->route('GET /order', function()
 // Define an order process route
 $f3->route('POST /order-process', function()
 {
-    //print_r($_POST);
     $_SESSION['food'] = $_POST['food'];
 
     // Display order-process view
@@ -110,6 +109,8 @@ $f3->route('POST /order-process', function()
 // Define a summary route
 $f3->route('POST /summary', function()
 {
+    $_SESSION['meal'] = $_POST['meal'];
+
     // Display summary view
     $view = new Template();
     echo $view->render('views/summary.html');

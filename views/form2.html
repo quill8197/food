@@ -1,4 +1,15 @@
 <body>
-    <h1>Order Received</h1>
+    <h1>Food Order</h1>
+    <form method="post" action="summary">
+        <label>Which meal?
+            <select name="meal">
+                <option value="breakfast">Breakfast</option>
+                <option value="brunch">Brunch</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>
+        </label>
+        <input type="submit" value="Place Order">
+    </form>
 </body>
 </html>
