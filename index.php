@@ -15,7 +15,7 @@ error_reporting(E_ALL);
 require_once ('vendor/autoload.php');
 
 // Include header
-include('views/head.html');
+//include('views/head.html');
 
 // Create an instance of the base class
 $f3 = Base::instance();
@@ -85,12 +85,22 @@ $f3->route('GET /@first/@last', function($f3, $params)
     echo "<h1>Hello, $first $last!</h1>";
 });
 
-// Define a route that takes 2 parameters
-$f3->route('GET /order', function($f3, $params)
+// Define an order route
+$f3->route('GET /order', function()
 {
     // Display order view
     $view = new Template();
     echo $view->render('views/form1.html');
+});
+
+// Define an order process route
+$f3->route('POST /order-process', function()
+{
+    print_r($_POST);
+
+    // Display order-process view
+    $view = new Template();
+    echo $view->render('views/form2.html');
 });
 
 // Define a lunch route
