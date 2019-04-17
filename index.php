@@ -96,12 +96,12 @@ $f3->route('GET /order', function()
     echo $view->render('views/form1.html');
 });
 
-// Define an order process route
-$f3->route('POST /order-process', function()
+// Define a second order route
+$f3->route('POST /order2', function()
 {
     $_SESSION['food'] = $_POST['food'];
 
-    // Display order-process view
+    // Display order2 view
     $view = new Template();
     echo $view->render('views/form2.html');
 });
